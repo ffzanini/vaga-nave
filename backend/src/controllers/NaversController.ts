@@ -64,5 +64,24 @@ export default {
     await naversRepository.save(navers);
   
     return response.status(201).json(navers);
-  }
+  },
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const naversRepository = getCustomRepository(NaversRepository);
+
+    const naverDontExists = await naversRepository.findOne(id);
+
+    if(!naverDontExists) {
+      return response.status(400).json({
+        error: "Naver não existe!"
+      }) 
+    }
+
+    await naversRepository.delete(id);
+
+    return response.status(200).json( { message: "Exclusão realizada com sucesso" });
+  },
+  
 };

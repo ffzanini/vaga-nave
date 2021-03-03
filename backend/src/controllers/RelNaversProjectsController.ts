@@ -51,5 +51,23 @@ export default {
     await relNaversProjectsRepository.save(projectsNavers);
   
     return response.status(201).json(projectsNavers);
-  }
+  },
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const relNaversProjectsRepository = getCustomRepository(ProjectsNaversRepository);
+
+    const relNaversProjectsDontExists = await relNaversProjectsRepository.findOne(id);
+    
+    if(!relNaversProjectsDontExists) {
+      return response.status(400).json({
+        error: "Relacionamento não existe!"
+      }) 
+    }
+
+    await relNaversProjectsRepository.delete(id);
+
+    return response.status(200).json( { message: "Exclusão realizada com sucesso" });
+  },
 };

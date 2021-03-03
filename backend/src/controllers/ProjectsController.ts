@@ -54,5 +54,23 @@ export default {
     await projectsRepository.save(projects);
   
     return response.status(201).json(projects);
-  }
+  },
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const projectsRepository = getCustomRepository(ProjectsRepository);
+
+    const projectDontExists = await projectsRepository.findOne(id);
+    
+    if(!projectDontExists) {
+      return response.status(400).json({
+        error: "Projeto não existe!"
+      }) 
+    }
+
+    await projectsRepository.delete(id);
+
+    return response.status(200).json( { message: "Exclusão realizada com sucesso" });
+  },
 };
