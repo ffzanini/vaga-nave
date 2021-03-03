@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 import * as Yup from 'yup';
-
+import { ProjectsNaversRepository } from '../repositories/ProjectsNaversRepository';
 import relProjectsView from '../view/rel_projects_navers';
-import ProjectsNavers from '../models/ProjectsNavers';
+
 
 export default {
   async index(request: Request, response: Response) {
-    const relNaversProjectsRepository = getRepository(ProjectsNavers);
+    const relNaversProjectsRepository = getCustomRepository(ProjectsNaversRepository);
 
     const projectsNavers = await relNaversProjectsRepository.find();
 
@@ -17,7 +17,7 @@ export default {
   async show(request: Request, response: Response) {
     const { id } = request.params;
 
-    const relNaversProjectsRepository = getRepository(ProjectsNavers);
+    const relNaversProjectsRepository = getCustomRepository(ProjectsNaversRepository);
 
     const projectsNavers = await relNaversProjectsRepository.findOneOrFail(id);
 
@@ -30,7 +30,7 @@ export default {
       project_id
     } = request.body;
   
-    const relNaversProjectsRepository = getRepository(ProjectsNavers);
+    const relNaversProjectsRepository = getCustomRepository(ProjectsNaversRepository);
     
     const data = {
       naver_id,

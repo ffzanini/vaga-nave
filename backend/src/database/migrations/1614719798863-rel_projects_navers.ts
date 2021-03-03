@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class relProjectsNavers1614719798863 implements MigrationInterface {
 	public async up(queryRunner: QueryRunner): Promise<void> {
@@ -21,10 +21,15 @@ export class relProjectsNavers1614719798863 implements MigrationInterface {
 					name: 'naver_id',
 					type: 'integer',
 				},
+				{
+					name: 'created_at',
+					type: 'timestamp',
+					default: "now()"
+				},
 			],
 			foreignKeys: [
 				{
-					name: 'IdNaver',
+					name: 'FKNaver',
 					columnNames: ['naver_id'],
 					referencedTableName: 'navers',
 					referencedColumnNames: ['id'],
@@ -32,13 +37,13 @@ export class relProjectsNavers1614719798863 implements MigrationInterface {
 					onUpdate: 'CASCADE',
 				},
 				{
-					name: 'IdProject',
+					name: 'FKProject',
 					columnNames: ['project_id'],
 					referencedTableName: 'projects',
 					referencedColumnNames: ['id'],
 					onUpdate: 'CASCADE',
 					onDelete: 'CASCADE',
-				}
+				},
 			]
 		}))
 	}

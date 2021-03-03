@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class createNavers1614711430756 implements MigrationInterface {
 
@@ -32,11 +32,12 @@ export class createNavers1614711430756 implements MigrationInterface {
 					},
 					{
 						name: 'created_at',
-						type: 'date'
+						type: 'timestamp',
+						default: "now()"
 					},
 					{
 						name: 'updated_at',
-						type: 'date'
+						type: 'timestamp'
 					}
 			],
 		}))

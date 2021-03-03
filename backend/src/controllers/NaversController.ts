@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-
+import { getCustomRepository } from 'typeorm';
 import * as Yup from 'yup';
-
+import { NaversRepository } from '../repositories/NaversRepository';
 import naversView from '../view/navers_view';
-import Navers from '../models/Navers';
+
+
 
 export default {
   async index(request: Request, response: Response) {
-    const naversRepository = getRepository(Navers);
+    const naversRepository = getCustomRepository(NaversRepository);
 
     const navers = await naversRepository.find();
 
@@ -18,7 +18,7 @@ export default {
   async show(request: Request, response: Response) {
     const { id } = request.params;
 
-    const naversRepository = getRepository(Navers);
+    const naversRepository = getCustomRepository(NaversRepository);
 
     const naver = await naversRepository.findOneOrFail(id);
 
@@ -35,7 +35,7 @@ export default {
       updated_at
     } = request.body;
   
-    const naversRepository = getRepository(Navers);
+    const naversRepository = getCustomRepository(NaversRepository);
     
     const data = {
       name,

@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 import * as Yup from 'yup';
-
+import { ProjectsRepository } from '../repositories/ProjectsRepository';
 import projectsView from '../view/projects_view';
-import Projects from '../models/Projects';
+
 
 export default {
   async index(request: Request, response: Response) {
-    const projectsRepository = getRepository(Projects);
+    const projectsRepository = getCustomRepository(ProjectsRepository);
 
     const projects = await projectsRepository.find();
 
@@ -17,7 +17,7 @@ export default {
   async show(request: Request, response: Response) {
     const { id } = request.params;
 
-    const projectsRepository = getRepository(Projects);
+    const projectsRepository = getCustomRepository(ProjectsRepository);
 
     const project = await projectsRepository.findOneOrFail(id);
 
@@ -31,7 +31,7 @@ export default {
       updated_at,
     } = request.body;
   
-    const projectsRepository = getRepository(Projects);
+    const projectsRepository = getCustomRepository(ProjectsRepository);
     
     const data = {
       name,

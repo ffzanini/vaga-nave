@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class createProjects1614716255064 implements MigrationInterface {
 	public async up(queryRunner: QueryRunner): Promise<void> {
@@ -19,7 +19,8 @@ export class createProjects1614716255064 implements MigrationInterface {
 				},
 				{
 					name: 'created_at',
-					type: 'date'
+					type: 'timestamp',
+					default: "now()"
 				},
 				{
 					name: 'updated_at',
