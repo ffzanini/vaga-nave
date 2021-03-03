@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="nave" src="frontend/src/images/logo-black.png"/>
+    <img alt="nave" src="frontend/src/images/logo-white.png"/>
 </h1>
 
 <h4 align="center">
@@ -17,9 +17,9 @@
 ## :rocket: Tecnologias
 
 Tecnologias utilizadas no frontend:
-- [JavaScript]
-- [HTML5]
-- [CSS]
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [FetchAPI](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 Tecnologias utilizadas no backend:
@@ -36,13 +36,13 @@ Tecnologias utilizadas no backend:
 
 Lógica de programação
 
--[Link-Testes](https://codesandbox.io/s/teste-estagio-template-felipe-zanini-9isjy)
+- [LógicaDeProgramação](https://codesandbox.io/s/teste-estagio-template-felipe-zanini-9isjy)
 
-FrontEnd
-Desenvolvido um projeto bem simples e responsivo para apresentação de dados vindos de uma API externa via fetch.
+Frontend
+<p>Desenvolvido um projeto bem simples e responsivo para apresentação de dados vindos de uma API externa via fetch.</p>
 
-BackEnd
-Desenvolvida uma API no modelo MVC para realizar o cadastro, alteração, exclusão e requisição de projetos e navers presentes na base de dados.
+Backend
+<p>Desenvolvida uma API no modelo MVC para realizar o cadastro, alteração, exclusão e requisição de projetos e navers presentes na base de dados.</p>
 
 ## 🔖 Como Executar
 
@@ -51,7 +51,7 @@ Desenvolvida uma API no modelo MVC para realizar o cadastro, alteração, exclus
 git clone https://github.com/ffzanini/vaga-nave.git
 ```
 #### Instalação Backend
-No seu terminal, siga as instruções abaixo para instalar a dependência no projeto.
+No seu terminal, siga as instruções abaixo para instalar as dependências no projeto.
 ```sh
 cd backend
 yarn install
@@ -68,7 +68,7 @@ cd frontend
 windowns: start .\index.html
 linux: xdg-open index.html
 ```
-ou se prefirir, abrir a pasta manualmente e executar a aplicação a partir do duplo no index.html.
+Ou se prefirir, abrir a pasta frontend manualmente e executar a aplicação a partir do duplo clique no index.html.
 
 #### Iniciando a aplicação Backend
 ```sh
@@ -79,7 +79,7 @@ yarn start
 
 ## License
 <p align="justify">
-This project is licensed under the <a href="https://github.com/ffzanini/proffy-project/blob/master/LICENSE">MIT<a/> License
+This project is licensed under the <a href="https://github.com/ffzanini/vaga-nave/blob/master/LICENSE">MIT<a/> License
 </p>
     
 ---
