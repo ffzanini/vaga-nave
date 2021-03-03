@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  Teste de vaga para estágio na nave.rs
+  Teste da vaga de Estagiário Backend na nave.rs
 </h4>
 
 <p align="center">
@@ -16,13 +16,13 @@
 
 ## :rocket: Tecnologias
 
-Tecnologias utilizadas no frontend:
+#### Tecnologias utilizadas no frontend:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5)
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [FetchAPI](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
-Tecnologias utilizadas no backend:
+#### Tecnologias utilizadas no backend:
 - [Yarn](https://yarnpkg.com/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
@@ -34,14 +34,14 @@ Tecnologias utilizadas no backend:
 
 ## 💻 Projetos
 
-Lógica de programação
+#### Lógica de programação
 
 - [LógicaDeProgramação](https://codesandbox.io/s/teste-estagio-template-felipe-zanini-9isjy)
 
-Frontend
+#### Frontend
 <p>Desenvolvido um projeto bem simples e responsivo para apresentação de dados vindos de uma API externa via fetch.</p>
 
-Backend
+#### Backend
 <p>Desenvolvida uma API no modelo MVC para realizar o cadastro, alteração, exclusão e requisição de projetos e navers presentes na base de dados.</p>
 
 ## 🔖 Como Executar
