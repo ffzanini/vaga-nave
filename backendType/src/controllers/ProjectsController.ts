@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { ProjectsRepository } from '../repositories/ProjectsRepository';
 import projectsView from '../view/projects_view';
 
-
 export default {
   async index(request: Request, response: Response) {
     const projectsRepository = getCustomRepository(ProjectsRepository);

@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { ProjectsNaversRepository } from '../repositories/ProjectsNaversRepository';
 import relProjectsView from '../view/rel_projects_navers';
 
-
 export default {
   async index(request: Request, response: Response) {
     const relNaversProjectsRepository = getCustomRepository(ProjectsNaversRepository);

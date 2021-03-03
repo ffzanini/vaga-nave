@@ -4,8 +4,6 @@ import * as Yup from 'yup';
 import { NaversRepository } from '../repositories/NaversRepository';
 import naversView from '../view/navers_view';
 
-
-
 export default {
   async index(request: Request, response: Response) {
     const naversRepository = getCustomRepository(NaversRepository);
