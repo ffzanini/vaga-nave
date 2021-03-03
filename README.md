@@ -30,7 +30,7 @@
 - [TypeORM](https://typeorm.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sqlite3](https://www.sqlite.org/index.html)
-
+- [Insomnia](https://insomnia.rest/download/)
 
 ## 💻 Projetos
 
@@ -50,32 +50,80 @@
 ```sh
 git clone https://github.com/ffzanini/vaga-nave.git
 ```
-#### Instalação Backend
-No seu terminal, siga as instruções abaixo para instalar as dependências no projeto.
-```sh
-cd backend
-yarn install
-```
-#### Gerar banco de dados
-```sh
-cd backend
-yarn typeorm migration:run
-```
-#### Iniciando a aplicação Frontend
+#### Iniciando a aplicação frontend
 ```sh
 cd frontend
 
 windowns: start .\index.html
 linux: xdg-open index.html
 ```
-Ou se prefirir, abrir a pasta frontend manualmente e executar a aplicação a partir do duplo clique no index.html.
+<p>Ou se prefirir, abrir a pasta frontend manualmente e executar o index.html a partir do duplo clique.</p>
 
-#### Iniciando a aplicação Backend
+#### Instalação backend
+No seu terminal, siga as instruções abaixo para instalar as dependências no projeto.
+```sh
+cd backend
+yarn install
+```
+#### Antes de gerar um novo banco, execute o comando abaixo para ter certeza que o mesmo se encontra em branco
+```sh
+cd backend
+yarn typeorm schema:drop 
+```
+#### Gerar banco de dados
+```sh
+cd backend
+yarn typeorm migration:run
+```
+#### Iniciando a aplicação backend
 ```sh
 cd backend
 yarn start
 ```
+#### Como executar os testes
+<p>Com o servidor já inciado, abra o seu Insomnia ou Postman e insira as seguintes rotas para cada operação:</p>
 
+#### Navers
+<p>Método POST: http://localhost:3333/navers - Cria um novo Naver e abaixo um exemplo para ser incluido na base:</p>
+
+```sh
+{
+	"name": "Felipe Frantz Zanini",
+	"birthdate": "1993-06-30",
+	"admission_date": "2021-03-10",
+	"job_role": "Desenvolvedor BackEnd"
+}
+```
+<p>GET: http://localhost:3333/navers - Retorna todos os Navers cadastrados</p>
+<p>GET: http://localhost:3333/navers/:id - Retorna o Naver com o ID selecionado</p>
+<p>DELETE: http://localhost:3333/navers/:id - Deleta o Naver com o ID selecionado</p>
+
+#### Projetos
+
+<p>POST: http://localhost:3333/projects - Cria um novo Projeto</p>
+
+```sh
+{
+	"name": "Projeto Feliz"
+}
+```
+<p>GET: http://localhost:3333/projects - Retorna todos os Projetos cadastrados</p>
+<p>GET: http://localhost:3333/projects/:id - Retorna o Projeto com o ID selecionado</p>
+<p>DELETE: http://localhost:3333/projects/:id - Deleta o Projeto com o ID selecionado</p>
+
+#### Relacionamentos
+
+<p>POST: http://localhost:3333/relations - Cria um novo relacionamento entre um Naver e um Projeto existentes na base</p>
+
+```sh
+{
+	"naver_id": 1,
+	"project_id": 1
+}
+```
+<p>GET: http://localhost:3333/relations - Retorna todos os Relacionamentos cadastrados</p>
+<p>GET: http://localhost:3333/relations/:id - Retorna o Relacionamento com o ID selecionado</p>
+<p>DELETE: http://localhost:3333/relations/:id - Deleta o Relacionamento com o ID selecionado</p>
 
 ## License
 <p align="justify">
