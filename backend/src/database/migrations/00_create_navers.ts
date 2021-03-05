@@ -7,8 +7,8 @@ export async function up(knex: Knex) {
     table.string('job_role').notNullable();
     table.date('birthdate').notNullable();
     table.date('admission_date').notNullable();
-    table.timestamp('created_at').defaultTo('now()').notNullable();
-    table.timestamp('updated_at').defaultTo('now()').notNullable();
+    table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
+    table.timestamp('updated_at').defaultTo(knex.fn.now()).notNullable();
   });
 }
 
