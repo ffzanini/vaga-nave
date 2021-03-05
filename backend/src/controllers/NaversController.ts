@@ -19,10 +19,10 @@ export default {
       })
 
       if (!allNavers) {
-        return response.status(400).json({ message: 'Nenhum Naver não encontrado' })
+        return response.status(400).json({ message: 'Nenhum Naver encontrado' })
       }
   
-      return response.json(allNavers);
+      return response.status(302).json(allNavers);
     }
 
     const navers = await knex('navers').select('*');
@@ -38,22 +38,22 @@ export default {
     })
 
     if (!allNavers) {
-      return response.status(400).json({ message: 'Nenhum Naver não encontrado' })
+      return response.status(400).json({ message: 'Nenhum Naver encontrado' })
     }
 
-    return response.json(allNavers);
+    return response.status(302).json(allNavers);
   },
 
   async show(request: Request, response: Response) {
     const { id } = request.params;
-
+    
     const navers = await knex('navers').where('id', id).first();
     
     if (!navers) {
       return response.status(400).json({ message: 'Naver não encontrado' })
     }
     const projects = await knex('projects').join('projects_navers', 'projects.id', '=', 'projects_navers.project_id').where('projects_navers.naver_id', id).select('projects.id', 'projects.name');
-    return response.status(200).json({navers, projects});
+    return response.status(302).json({ navers, projects });
   },
 
   async create(request: Request, response: Response) {
@@ -80,11 +80,10 @@ export default {
         naver_id: insertedIds,
       }
     })
-      
-    await knex('projects_navers').insert(relProjects);
 
-    return response.status(201).json(navers);
+    await knex('projects_navers').insert(relProjects);
     
+    return response.status(201).json(navers);
   },
 
   async update(request: Request, response: Response) {
@@ -124,6 +123,6 @@ export default {
     }
 
     await knex('navers').where({id}).del()
-    return response.status(200).json({ message: 'Exclusão realizada com sucesso'});
+    return response.status(204).json({ message: 'Exclusão realizada com sucesso'});
   },
 }

@@ -7,25 +7,13 @@ export default {
 
     if(navers) {
       if(navers === 'all') {
-        const projects = await knex('projects').select('*');
-        const navers = await knex('navers').join('projects_navers', 'navers.id', '=', 'projects_navers.naver_id').where('projects_navers.project_id', projects[0]).select('navers.name')
+        const projects = await knex.raw('SELECT projects.id, projects.name, GROUP_CONCAT(navers.name) AS navers FROM projects INNER JOIN projects_navers ON projects.id = projects_navers.project_id INNER JOIN navers ON navers.id = projects_navers.naver_id GROUP BY projects.id');
 
-        const allProjects = projects.map(projects => {
-          return {
-            id: projects.id,
-            name: projects.name,
-            navers
-          }
-        })
-
-        if (!allProjects) {
-          return response.status(400).json({ message: 'Nenhum Projeto não encontrado' })
-        }
-        
-        return response.status(200).json({ allProjects });
-
+        response.status(302).json({projects})
       } else if(navers === 'count') {
-        response.json({message:'count'})
+        const projects = await knex.raw('SELECT projects.id, projects.name, count(navers.name) as count_navers FROM projects INNER JOIN projects_navers ON projects.id = projects_navers.project_id INNER JOIN navers ON navers.id = projects_navers.naver_id GROUP BY projects.id');
+
+        response.status(302).json({projects})
       }
     }
 
@@ -39,10 +27,10 @@ export default {
     })
 
     if (!allProjects) {
-      return response.status(400).json({ message: 'Nenhum Projeto não encontrado' })
+      return response.status(400).json({ message: 'Nenhum Projeto encontrado' })
     }
 
-    return response.json(allProjects);
+    return response.status(302).json(allProjects);
   },
 
   async show(request: Request, response: Response) {
@@ -55,7 +43,7 @@ export default {
     }
     const navers = await knex('navers').join('projects_navers', 'navers.id', '=', 'projects_navers.naver_id').where('projects_navers.project_id', id).select('navers.id', 'navers.name');
 
-    return response.status(200).json({projects, navers});
+    return response.status(302).json({projects, navers});
   },
 
   async create(request: Request, response: Response) {
@@ -113,6 +101,6 @@ export default {
     }
 
     await knex('projects').where({id}).del()
-    return response.status(200).json({ message: 'Exclusão realizada com sucesso'});
+    return response.status(204).json({ message: 'Exclusão realizada com sucesso'});
   },
 }
