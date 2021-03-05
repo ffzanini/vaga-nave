@@ -6,5 +6,6 @@ export async function seed(knex: Knex){
     { name: 'Projeto Alegre'},
     { name: 'Projeto Bacana'},
     { name: 'Projeto Felicidade'},
+    { name: 'Projeto Incrível'},
   ]);
 }
