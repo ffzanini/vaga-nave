@@ -7,14 +7,16 @@
 </h4>
 
 <p align="center">
-  :rocket: <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🚀 <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   💻 <a href="#-projeto">Projetos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   🔖 <a href="#-como-executar">Como Executar</a>&nbsp;&nbsp;&nbsp;
+	🤔 <a href="#-como-testar">Como Testar</a>&nbsp;&nbsp;&nbsp;
+	🧾 <a href="#-licenca">Licença</a>&nbsp;&nbsp;&nbsp;
 </p>
 
-<br>
+---
 
-## :rocket: Tecnologias
+## 🚀 Tecnologias
 
 #### Tecnologias utilizadas no frontend:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
@@ -26,23 +28,26 @@
 - [Yarn](https://yarnpkg.com/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
-- [Yup](https://github.com/jquense/yup/blob/master/yarn.lock)
-- [TypeORM](https://typeorm.io/)
+- [Knex](http://knexjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sqlite3](https://www.sqlite.org/index.html)
 - [Insomnia](https://insomnia.rest/download/)
+
+---
 
 ## 💻 Projetos
 
 #### Lógica de programação
 
-- [LógicaDeProgramação](https://codesandbox.io/s/teste-estagio-template-felipe-zanini-9isjy)
+- [Link_para_o_teste_de_Lógica_Programação](https://codesandbox.io/s/teste-estagio-template-felipe-zanini-9isjy)
 
 #### Frontend
 <p>Desenvolvido um projeto bem simples e responsivo para apresentação de dados vindos de uma API externa via fetch.</p>
 
 #### Backend
-<p>Desenvolvida uma API no modelo MVC para realizar o cadastro, alteração, exclusão e requisição de projetos e navers presentes na base de dados.</p>
+<p>Desenvolvida uma API para realizar o cadastro, alteração, exclusão e requisição de projetos e navers presentes na base de dados.</p>
+
+---
 
 ## 🔖 Como Executar
 
@@ -65,55 +70,69 @@ No seu terminal, siga as instruções abaixo para instalar as dependências no p
 cd backend
 yarn install
 ```
-#### Antes de gerar um novo banco, execute o comando abaixo para ter certeza que o mesmo se encontra em branco
+#### Antes de gerar um novo banco, execute o comando abaixo para ter certeza que o mesmo se encontra vazio
 ```sh
 cd backend
-yarn typeorm schema:drop 
+yarn knex:migrate:rollback
 ```
-#### Gerar banco de dados
+#### Gerar o banco de dados
 ```sh
 cd backend
-yarn typeorm migration:run
+yarn knex:migrate
+```
+#### Popular o banco de dados
+```sh
+cd backend
+yarn knex:seed
 ```
 #### Iniciando a aplicação backend
 ```sh
 cd backend
 yarn start
 ```
-#### Como executar os testes
-<p>Com o servidor já inciado, abra o seu Insomnia ou Postman e insira as seguintes rotas para cada operação:</p>
+---
+## 🤔 Como Testar
+<p>Com o servidor já inciado, abra o seu Insomnia ou Postman. Caso opte por utilizar o Insominia, na pasta <b>utils</b> contém um arquivo com todas as configurações para os testes. Basta exportar o arquivo para o seu Insominia.</p>
+<p>Abaixo ficam detalhados as rotas disponíveis para os testes, assim como as querys que podem ser executadas.</p>
 
 #### Navers
-<p>Método POST: http://localhost:3333/navers - Cria um novo Naver e abaixo um exemplo para ser incluido na base:</p>
+<p><b>POST:</b> http://localhost:3333/navers - Cria um novo Naver e abaixo um exemplo para ser incluido na base:</p>
 
 ```sh
 {
-	"name": "Felipe Frantz Zanini",
-	"birthdate": "1993-06-30",
-	"admission_date": "2021-03-10",
-	"job_role": "Desenvolvedor BackEnd"
+	"name": "Rubens Corrêa",
+	"birthdate": "1995-12-12",
+	"admission_date": "2021-02-11",
+	"job_role": "Desenvolvedor Backend",
+	"projects": [1, 2]
 }
 ```
-<p>GET: http://localhost:3333/navers - Retorna todos os Navers cadastrados</p>
-<p>GET: http://localhost:3333/navers/:id - Retorna o Naver com o ID selecionado</p>
-<p>DELETE: http://localhost:3333/navers/:id - Deleta o Naver com o ID selecionado</p>
+<p><b>GET:</b> http://localhost:3333/navers - Retorna todos os Navers cadastrados</p>
+<p><b>GET:</b> http://localhost:3333/navers?admission_date=asc - Retorna todos os Navers cadastrados em ordem ascendente</p>
+<p><b>GET:</b> http://localhost:3333/navers?admission_date=desc - Retorna todos os Navers cadastrados em ordem decrescente</p>
+<p><b>GET:</b> http://localhost:3333/navers/:id - Retorna o Naver com o ID selecionado e os projetos que participa</p>
+<p><b>PUT:</b> http://localhost:3333/navers/:id - Altera o Naver com o ID selecionado</p>
+<p><b>DELETE:</b> http://localhost:3333/navers/:id - Deleta o Naver com o ID selecionado</p>
 
 #### Projetos
 
-<p>POST: http://localhost:3333/projects - Cria um novo Projeto</p>
+<p><b>POST:</b> http://localhost:3333/projects - Cria um novo Projeto</p>
 
 ```sh
 {
-	"name": "Projeto Feliz"
+	"name": "Projeto Estoy Happy",
+	"navers": [1,2]
 }
 ```
-<p>GET: http://localhost:3333/projects - Retorna todos os Projetos cadastrados</p>
-<p>GET: http://localhost:3333/projects/:id - Retorna o Projeto com o ID selecionado</p>
-<p>DELETE: http://localhost:3333/projects/:id - Deleta o Projeto com o ID selecionado</p>
+<p><b>GET:</b> http://localhost:3333/projects - Retorna todos os Projetos cadastrados</p>
+<p><b>GET:</b> http://localhost:3333/projects?navers=all - Retorna todos os Projetos cadastrados com seus respectivos Navers</p>
+<p><b>GET:</b> http://localhost:3333/projects?navers=count - Retorna todos os Projetos cadastrados com sua quantidade de Navers</p>
+<p><b>GET:</b> http://localhost:3333/projects/:id - Retorna o Projeto com o ID selecionado</p>
+<p><b>DELETE:</b> http://localhost:3333/projects/:id - Deleta o Projeto com o ID selecionado</p>
 
 #### Relacionamentos
 
-<p>POST: http://localhost:3333/relations - Cria um novo relacionamento entre um Naver e um Projeto existentes na base</p>
+<p><b>POST:</b> http://localhost:3333/relations - Cria um novo relacionamento entre um Naver e um Projeto existentes na base</p>
 
 ```sh
 {
@@ -121,11 +140,13 @@ yarn start
 	"project_id": 1
 }
 ```
-<p>GET: http://localhost:3333/relations - Retorna todos os Relacionamentos cadastrados</p>
-<p>GET: http://localhost:3333/relations/:id - Retorna o Relacionamento com o ID selecionado</p>
-<p>DELETE: http://localhost:3333/relations/:id - Deleta o Relacionamento com o ID selecionado</p>
+<p><b>GET:</b> http://localhost:3333/relations - Retorna todos os Relacionamentos cadastrados</p>
+<p><b>GET:</b> http://localhost:3333/relations/:id - Retorna o Relacionamento com o ID selecionado</p>
+<p><b>DELETE:</b> http://localhost:3333/relations/:id - Deleta o Relacionamento com o ID selecionado</p>
 
-## License
+---
+
+## 🧾 Licença
 <p align="justify">
 This project is licensed under the <a href="https://github.com/ffzanini/vaga-nave/blob/master/LICENSE">MIT<a/> License
 </p>
