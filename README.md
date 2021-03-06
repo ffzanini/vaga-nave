@@ -15,6 +15,7 @@
 </p>
 
 <br>
+
 ---
 
 ## ⚒️ Tecnologias
@@ -63,7 +64,7 @@ cd frontend
 windowns: start .\index.html
 linux: xdg-open index.html
 ```
-<p>Ou se prefirir, abrir a pasta frontend manualmente e executar o index.html a partir do duplo clique.</p>
+<p>Ou se prefirir, abrir a pasta frontend manualmente e executar o arquivo <b>index.html</b> a partir do duplo clique.</p>
 
 #### Instalação backend
 No seu terminal, siga as instruções abaixo para instalar as dependências no projeto.
@@ -96,8 +97,8 @@ yarn start
 <p>Com o servidor já inciado, abra o seu Insomnia ou Postman. Caso opte por utilizar o Insominia, na pasta <b>utils</b> contém um arquivo com todas as configurações para os testes. Basta exportar o arquivo para o seu Insominia.</p>
 <p>Abaixo ficam detalhados as rotas disponíveis para os testes, assim como as querys que podem ser executadas.</p>
 
-<h2 align="center">Projetos</h2>
-<p><b>POST:</b> http://localhost:3333/navers - Cria um novo Naver e abaixo um exemplo para ser incluido na base:</p>
+<h3 align="left">Navers</h3>
+<p><b>POST:</b> http://localhost:3333/navers -> Cria um novo Naver e abaixo um exemplo para ser incluido na base:</p>
 
 ```sh
 {
@@ -108,16 +109,16 @@ yarn start
 	"projects": [1, 2]
 }
 ```
-<p><b>GET:</b> http://localhost:3333/navers - Retorna todos os Navers cadastrados</p>
-<p><b>GET:</b> http://localhost:3333/navers?admission_date=asc - Retorna todos os Navers cadastrados em ordem ascendente</p>
-<p><b>GET:</b> http://localhost:3333/navers?admission_date=desc - Retorna todos os Navers cadastrados em ordem decrescente</p>
-<p><b>GET:</b> http://localhost:3333/navers/:id - Retorna o Naver com o ID selecionado e os projetos que participa</p>
-<p><b>PUT:</b> http://localhost:3333/navers/:id - Altera o Naver com o ID selecionado</p>
-<p><b>DELETE:</b> http://localhost:3333/navers/:id - Deleta o Naver com o ID selecionado</p>
+<p><b>GET:</b> http://localhost:3333/navers -> Retorna todos os Navers cadastrados</p>
+<p><b>GET:</b> http://localhost:3333/navers?admission_date=asc -> Retorna todos os Navers cadastrados em ordem ascendente</p>
+<p><b>GET:</b> http://localhost:3333/navers?admission_date=desc -> Retorna todos os Navers cadastrados em ordem decrescente</p>
+<p><b>GET:</b> http://localhost:3333/navers/:id -> Retorna o Naver com o ID selecionado e os projetos que participa</p>
+<p><b>PUT:</b> http://localhost:3333/navers/:id -> Altera o Naver com o ID selecionado</p>
+<p><b>DELETE:</b> http://localhost:3333/navers/:id -> Deleta o Naver com o ID selecionado</p>
 
-<h2 align="center">Projetos</h2>
+<h3 align="left">Projetos</h3>
 
-<p><b>POST:</b> http://localhost:3333/projects - Cria um novo Projeto</p>
+<p><b>POST:</b> http://localhost:3333/projects -> Cria um novo Projeto</p>
 
 ```sh
 {
@@ -125,15 +126,15 @@ yarn start
 	"navers": [1,2]
 }
 ```
-<p><b>GET:</b> http://localhost:3333/projects - Retorna todos os Projetos cadastrados</p>
-<p><b>GET:</b> http://localhost:3333/projects?navers=all - Retorna todos os Projetos cadastrados com seus respectivos Navers</p>
-<p><b>GET:</b> http://localhost:3333/projects?navers=count - Retorna todos os Projetos cadastrados com sua quantidade de Navers</p>
-<p><b>GET:</b> http://localhost:3333/projects/:id - Retorna o Projeto com o ID selecionado</p>
-<p><b>DELETE:</b> http://localhost:3333/projects/:id - Deleta o Projeto com o ID selecionado</p>
+<p><b>GET:</b> http://localhost:3333/projects -> Retorna todos os Projetos cadastrados</p>
+<p><b>GET:</b> http://localhost:3333/projects?navers=all -> Retorna todos os Projetos cadastrados com seus respectivos Navers</p>
+<p><b>GET:</b> http://localhost:3333/projects?navers=count -> Retorna todos os Projetos cadastrados com sua quantidade de Navers</p>
+<p><b>GET:</b> http://localhost:3333/projects/:id -> Retorna o Projeto com o ID selecionado</p>
+<p><b>DELETE:</b> http://localhost:3333/projects/:id -> Deleta o Projeto com o ID selecionado</p>
 
-<h2 align="center">Projetos</h2>
+<h3 align="left">Relacionamentos</h3>
 
-<p><b>POST:</b> http://localhost:3333/relations - Cria um novo relacionamento entre um Naver e um Projeto existentes na base</p>
+<p><b>POST:</b> http://localhost:3333/relations -> Cria um novo relacionamento entre um Naver e um Projeto existentes na base</p>
 
 ```sh
 {
@@ -141,9 +142,9 @@ yarn start
 	"project_id": 1
 }
 ```
-<p><b>GET:</b> http://localhost:3333/relations - Retorna todos os Relacionamentos cadastrados</p>
-<p><b>GET:</b> http://localhost:3333/relations/:id - Retorna o Relacionamento com o ID selecionado</p>
-<p><b>DELETE:</b> http://localhost:3333/relations/:id - Deleta o Relacionamento com o ID selecionado</p>
+<p><b>GET:</b> http://localhost:3333/relations -> Retorna todos os Relacionamentos cadastrados</p>
+<p><b>GET:</b> http://localhost:3333/relations/:id -> Retorna o Relacionamento com o ID selecionado</p>
+<p><b>DELETE:</b> http://localhost:3333/relations/:id -> Deleta o Relacionamento com o ID selecionado</p>
 
 ---
 
