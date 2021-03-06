@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  Teste da vaga de Estagiário Backend na nave.rs
+  Teste para a vaga de Estagiário Backend na nave.rs
 </h4>
 
 <p align="center">
@@ -41,13 +41,13 @@
 
 #### Lógica de programação
 
-- [Link_para_o_teste_de_Lógica_Programação](https://codesandbox.io/s/teste-estagio-template-felipe-zanini-9isjy)
+- [Link_para_o_teste_de_Lógica_Programação](https://codesandbox.io/s/9isjy)
 
 #### Frontend
 <p>Desenvolvido um projeto bem simples e responsivo para apresentação de dados vindos de uma API externa via fetch.</p>
 
 #### Backend
-<p>Desenvolvida uma API para realizar o cadastro, alteração, exclusão e requisição de projetos e navers presentes na base de dados.</p>
+<p>Desenvolvida uma API para realizar o cadastro, alteração, exclusão de projetos, navers e seus relacionamentos além de requisições para visualização de projetos e navers presentes na base de dados.</p>
 
 ---
 
