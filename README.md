@@ -7,16 +7,17 @@
 </h4>
 
 <p align="center">
-  🚀 <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  💻 <a href="#-projeto">Projetos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  🔖 <a href="#-como-executar">Como Executar</a>&nbsp;&nbsp;&nbsp;
-	🤔 <a href="#-como-testar">Como Testar</a>&nbsp;&nbsp;&nbsp;
-	🧾 <a href="#-licenca">Licença</a>&nbsp;&nbsp;&nbsp;
+  ⚒️ <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  💻 <a href="#-sobre-os-projetos">Projetos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  🚀 <a href="#-como-executar">Como Executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	🤔 <a href="#-como-testar">Como Testar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	🧾 <a href="#-licença">Licença</a>&nbsp;&nbsp;
 </p>
 
+<br>
 ---
 
-## 🚀 Tecnologias
+## ⚒️ Tecnologias
 
 #### Tecnologias utilizadas no frontend:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
@@ -35,7 +36,7 @@
 
 ---
 
-## 💻 Projetos
+## 💻 Sobre os Projetos
 
 #### Lógica de programação
 
@@ -49,7 +50,7 @@
 
 ---
 
-## 🔖 Como Executar
+## 🚀 Como Executar
 
 #### Clonando o projeto
 ```sh
@@ -95,7 +96,7 @@ yarn start
 <p>Com o servidor já inciado, abra o seu Insomnia ou Postman. Caso opte por utilizar o Insominia, na pasta <b>utils</b> contém um arquivo com todas as configurações para os testes. Basta exportar o arquivo para o seu Insominia.</p>
 <p>Abaixo ficam detalhados as rotas disponíveis para os testes, assim como as querys que podem ser executadas.</p>
 
-#### Navers
+<h2 align="center">Projetos</h2>
 <p><b>POST:</b> http://localhost:3333/navers - Cria um novo Naver e abaixo um exemplo para ser incluido na base:</p>
 
 ```sh
@@ -114,7 +115,7 @@ yarn start
 <p><b>PUT:</b> http://localhost:3333/navers/:id - Altera o Naver com o ID selecionado</p>
 <p><b>DELETE:</b> http://localhost:3333/navers/:id - Deleta o Naver com o ID selecionado</p>
 
-#### Projetos
+<h2 align="center">Projetos</h2>
 
 <p><b>POST:</b> http://localhost:3333/projects - Cria um novo Projeto</p>
 
@@ -130,7 +131,7 @@ yarn start
 <p><b>GET:</b> http://localhost:3333/projects/:id - Retorna o Projeto com o ID selecionado</p>
 <p><b>DELETE:</b> http://localhost:3333/projects/:id - Deleta o Projeto com o ID selecionado</p>
 
-#### Relacionamentos
+<h2 align="center">Projetos</h2>
 
 <p><b>POST:</b> http://localhost:3333/relations - Cria um novo relacionamento entre um Naver e um Projeto existentes na base</p>
 
@@ -148,7 +149,7 @@ yarn start
 
 ## 🧾 Licença
 <p align="justify">
-This project is licensed under the <a href="https://github.com/ffzanini/vaga-nave/blob/master/LICENSE">MIT<a/> License
+Esse projeto está sob a licença MIT. Veja o arquivo <a href="https://github.com/ffzanini/vaga-nave/blob/master/LICENSE">LICENSE<a/> para mais detalhes.
 </p>
     
 ---
