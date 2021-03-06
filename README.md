@@ -130,6 +130,7 @@ yarn start
 <p><b>GET:</b> http://localhost:3333/projects?navers=all -> Retorna todos os Projetos cadastrados com seus respectivos Navers</p>
 <p><b>GET:</b> http://localhost:3333/projects?navers=count -> Retorna todos os Projetos cadastrados com sua quantidade de Navers</p>
 <p><b>GET:</b> http://localhost:3333/projects/:id -> Retorna o Projeto com o ID selecionado</p>
+<p><b>PUT:</b> http://localhost:3333/projects/:id -> Altera o Projeto com o ID selecionado</p>
 <p><b>DELETE:</b> http://localhost:3333/projects/:id -> Deleta o Projeto com o ID selecionado</p>
 
 <h3 align="left">Relacionamentos</h3>
@@ -142,8 +143,7 @@ yarn start
 	"project_id": 1
 }
 ```
-<p><b>GET:</b> http://localhost:3333/relations -> Retorna todos os Relacionamentos cadastrados</p>
-<p><b>GET:</b> http://localhost:3333/relations/:id -> Retorna o Relacionamento com o ID selecionado</p>
+<p><b>PUT:</b> http://localhost:3333/relations/:id -> Altera o Relacionamento com o ID selecionado</p>
 <p><b>DELETE:</b> http://localhost:3333/relations/:id -> Deleta o Relacionamento com o ID selecionado</p>
 
 ---
