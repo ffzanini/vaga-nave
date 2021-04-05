@@ -7,10 +7,22 @@ export default {
 
     if(navers) {
       if(navers === 'all') {
+        const allNavers = await knex('navers').select('*')
+        
+        if (allNavers.length == 0) {
+          return response.status(400).json({ message: 'Nenhum Naver encontrado' })
+        }
+        
         const projects = await knex.raw('SELECT projects.id, projects.name, GROUP_CONCAT(navers.name) AS navers FROM projects INNER JOIN projects_navers ON projects.id = projects_navers.project_id INNER JOIN navers ON navers.id = projects_navers.naver_id GROUP BY projects.id');
 
         response.status(302).json({projects})
       } else if(navers === 'count') {
+        const allNavers = await knex('navers').select('*')
+        
+        if (allNavers.length == 0) {
+          return response.status(400).json({ message: 'Nenhum Naver encontrado' })
+        }
+
         const projects = await knex.raw('SELECT projects.id, projects.name, count(navers.name) as count_navers FROM projects INNER JOIN projects_navers ON projects.id = projects_navers.project_id INNER JOIN navers ON navers.id = projects_navers.naver_id GROUP BY projects.id');
 
         response.status(302).json({projects})
@@ -101,6 +113,6 @@ export default {
     }
 
     await knex('projects').where({id}).del()
-    return response.status(204).json({ message: 'Exclusão realizada com sucesso'});
+    return response.status(200).json({ message: 'Exclusão realizada com sucesso'});
   },
 }

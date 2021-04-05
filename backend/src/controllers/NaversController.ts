@@ -123,6 +123,6 @@ export default {
     }
 
     await knex('navers').where({id}).del()
-    return response.status(204).json({ message: 'Exclusão realizada com sucesso'});
+    return response.status(200).json({ message: 'Exclusão realizada com sucesso'});
   },
 }
